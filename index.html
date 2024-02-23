@@ -14,10 +14,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/dd13dde450.js" crossorigin="anonymous"></script>
     <!--  -->
+    <style>
+        /* Style for the container */
+        #audioContainer {
+            position: fixed;
+            bottom: 20px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
 </head>
 <body>
     <div class="ashton">
-        <img id ="avatar">
+        <img id="avatar">
         <span style="align-items:center;"><h1 class="author">heresfilly</h1></span>
         <h2 class="skills">Developer-ish / Gamer / Cheater</h2>
         <div style="margin-top:30px;">
@@ -31,11 +40,14 @@
             </div>
         </div>
     </div>
-    <!-- Audio Player Controls -->
-    <audio id="audioPlayer" controls>
-        <source src="your_music_file.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <!-- Audio Player Controls Container -->
+    <div id="audioContainer">
+        <!-- Audio Player Controls -->
+        <audio id="audioPlayer" controls>
+            <source src="your_music_file.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
     <!-- Replace "your_music_file.mp3" with the path to your music file -->
     <script>
         // Function to play audio
