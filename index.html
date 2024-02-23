@@ -32,18 +32,26 @@
         </div>
     </div>
     <!-- Audio Player Controls -->
-    <audio id="audioPlayer" controls autoplay>
+    <audio id="audioPlayer" controls>
         <source src="your_music_file.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <!-- Replace "your_music_file.mp3" with the path to your music file -->
     <script>
-        $.getJSON('https://api.leaked.wiki/discorduser?id=1206761515190063175',
-        function(data) {
-            document.getElementById("avatar").src = data.avatar;
-            document.getElementById("username").innerHTML = data.username + "#" + data.discriminator
+        // Function to play audio
+        function playAudio() {
+            var audio = document.getElementById("audioPlayer");
+            audio.play();
         }
-        )
+
+        // Trigger the play function when the page loads
+        window.onload = playAudio;
+
+        // Load user data
+        $.getJSON('https://api.leaked.wiki/discorduser?id=1206761515190063175', function(data) {
+            document.getElementById("avatar").src = data.avatar;
+            document.getElementById("username").innerHTML = data.username + "#" + data.discriminator;
+        });
     </script>
 </body>
 </html>
